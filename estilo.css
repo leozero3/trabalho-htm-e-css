@@ -1,5 +1,7 @@
-/* Reset de margens e preenchimentos para o corpo da página */
+/* Estilo para o corpo da página */
 body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
     margin: 0;
     padding: 0;
 }
@@ -8,42 +10,180 @@ body {
 header {
     background-color: #333;
     color: #fff;
-    text-align: center;
-    padding: 10px;
-    font-size: x-large;
+    padding: 20px 0;
 }
 
-/* Estilo para a navegação */
+/* Estilo para a lista de navegação */
 nav ul {
     list-style: none;
-    margin-top: 20px;
+    padding: 0;
+    margin: 0;
+    text-align: center;
 }
 
 nav ul li {
     display: inline;
-    margin-right: 90px;
+    margin-right: 20px;
 }
 
-nav a {
+nav ul li a {
     text-decoration: none;
     color: #fff;
     font-weight: bold;
 }
 
-/* Estilo para o conteúdo da seção */
-#conteudo {
+/* Estilo para as seções */
+section {
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+section h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+section p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Estilo para links clicáveis dentro das seções */
+section a {
+    color: #007bff;
+    text-decoration: underline;
+}
+
+/* Estilo para a seção "Sobre Mim" */
+#sobre,#formacao {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-align: start;
+    padding: 80px;
+    background-color: #fff; /* Cor de fundo da seção */
+}
+
+/* Estilo para o texto da seção "Sobre Mim" */
+.about-text {
+    margin: 20px;
+}
+
+.about-text h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.about-text p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+
+section a:hover {
+    color: #0056b3;
+}
+
+/* Estilo para a seção "Portfólio" */
+#portfolio {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-bottom: 20px;
+    background-color: #fff; /* Cor de fundo da seção */
+}
+
+/* Estilo para o texto da seção */
+.portfolio-text {
+    text-align: center;
+    margin: 20px;
+}
+
+.portfolio-text h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.portfolio-text p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Estilo para links clicáveis dentro das seções */
+.portfolio-text a {
+    color: #007bff;
+    text-decoration: underline;
+    font-size: large;
+}
+
+.portfolio-text a:hover {
+    color: #0056b3;
+}
+
+/* Estilo para a imagem na parte inferior */
+.portfolio-image {
+    margin-top: auto;
     text-align: center;
 }
 
-/* Estilo para o texto destacado */
-#texto.texto-destaque {
-    font-size: 24px;
-    color: #ff6600;
+.portfolio-image img {
+    max-width: 100%;
+    height: auto;
 }
 
-/* Estilo para o exemplo de personagem */
-#exemplo-personagem {
-    text-align: left;
+
+
+/* Estilo para o formulário de contato */
+.contact-form {
+    text-align: center;
     padding: 20px;
-    border: 1px solid #ddd;
+    background-color: #fff; /* Cor de fundo da seção */
+}
+
+.contact-form h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+textarea {
+    resize: vertical;
+    height: 120px;
+}
+
+button[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
 }
