@@ -1,40 +1,28 @@
-const textosAleatorios = {
-    sobre: "Este é um texto aleatório sobre mim.",
-    formacao: "Aqui está um texto aleatório sobre minha formação educacional.",
-    portfolio: "Confira alguns projetos aleatórios no meu portfólio.",
-    contato: "Você pode entrar em contato comigo através do formulário abaixo."
-  };
-  
 // Função para atualizar o conteúdo da seção
 function atualizarConteudoSecao(secao) {
-  // Limpa o conteúdo de todas as seções
-  Object.keys(textosAleatorios).forEach(key => {
-    const secaoElement = document.getElementById(key);
-    if (secaoElement) {
-      secaoElement.innerHTML = "";
-    }
+  // Esconde todas as seções
+  const secoes = document.querySelectorAll('section');
+  secoes.forEach(secaoElement => {
+    secaoElement.style.display = 'none';
   });
 
-  // Define o texto aleatório para a seção atual
+  // Exibe a seção desejada
   const secaoElement = document.getElementById(secao);
   if (secaoElement) {
-    secaoElement.innerHTML = textosAleatorios[secao];
+    secaoElement.style.display = 'block';
   }
 }
-  
-  // Event listeners para os links de navegação
-  document.querySelector('a[href="#sobre"]').addEventListener("click", () => {
-    atualizarConteudoSecao("sobre");
+
+// Event listeners para os links de navegação
+const linksDeNavegacao = document.querySelectorAll('a[data-target]');
+linksDeNavegacao.forEach(link => {
+  link.addEventListener("click", (event) => {
+    event.preventDefault(); // Evita a ação padrão de navegação
+
+    const secaoAlvo = link.getAttribute('data-target');
+    atualizarConteudoSecao(secaoAlvo);
   });
-  
-  document.querySelector('a[href="#formacao"]').addEventListener("click", () => {
-    atualizarConteudoSecao("formacao");
-  });
-  
-  document.querySelector('a[href="#portfolio"]').addEventListener("click", () => {
-    atualizarConteudoSecao("portfolio");
-  });
-  
-  document.querySelector('a[href="#contato"]').addEventListener("click", () => {
-    atualizarConteudoSecao("contato");
-  });
+});
+
+// Inicialmente, exibe a seção "Sobre Mim"
+atualizarConteudoSecao("sobre");
